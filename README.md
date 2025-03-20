@@ -20,3 +20,8 @@ expenses = [
 * balance = sum(item["amount"] for item in incomes) - sum(item["amount"] for item in
   expenses)
 
+---------------------------------------------------------------------------
+
+# Main program - budget_manager.py
+
+Main function with the data stracture inside with the user menu interaction
