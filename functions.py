@@ -1,8 +1,28 @@
 # Functions.py file module
 
-# Income function - args: incomes, expenses, return: tuple(incomes, expenses)
-#def add_income(incomes: list, expenses: list) -> tuple:
-    #return incomes, expenses
+def add_expense(incomes: list, expenses: list) -> tuple:
+    """
+    Adds one or more expenses to the expenses list.
+    Receives:
+        incomes: list of income dictionaries (not modified)
+        expenses: list of expense dictionaries (will be updated)
+    Returns:
+        A tuple: (incomes, updated expenses)
+    """
+    while True:
+        description = input("Enter expense description (or 'q' to quit): ")
+        if description.lower() == "q":
+            break
+        try:
+            amount = float(input("Enter expense amount: "))
+            expenses.append({
+                "amount": amount,
+                "description": description
+            })
+        except ValueError:
+            print("Invalid amount. Please enter a number.")
+    return incomes, expenses
+
 
 
 
