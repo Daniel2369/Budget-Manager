@@ -29,7 +29,16 @@ def add_expense(incomes: list, expenses: list) -> tuple:
 
 
 def add_income(incomes: list, expenses: list) -> tuple:
-
+    while True:
+        description = input("Enter income transaction description (or 'q' to quit): ")
+        if description.lower == 'q':
+            break
+        try:
+            amount = float(input("Enter income transaction amount: "))
+            incomes.append({"amount": amount, "description": description})
+        except ValueError:
+            print("Error: Invalid amount. Please enter a valid number.")
+        return incomes, expenses
 
 
 
@@ -42,8 +51,17 @@ def show_balance(incomes: list, expenses: list) -> tuple:
 
 
 
-#def show_transaction_history(incomes: list, expenses: list) -> tuple:
-    #return incomes, expenses
+def show_transaction_history(incomes: list, expenses: list) -> tuple:
+    print("Transaction History:\n")
+    print("Incomes Transactions:")
+    for item in incomes:
+        print(f"Amount: {item["amount"]} ₪, Description: {item["description"]}")
+
+    print("\nExpenses Transactions:")
+    for item in expenses:
+        print(f"Amount: {item["amount"]} ₪, Description: {item["description"]}")
+
+    return incomes, expenses
 
 
 
