@@ -35,11 +35,11 @@ def add_expense(incomes: list, expenses: list) -> tuple:
 
 
 
-#def show_balance(incomes: list, expenses: list) -> tuple:
-    #return incomes, expenses
+def show_balance(incomes: list, expenses: list) -> tuple:
+    balance = sum(item["amount"] for item in incomes) - sum(item["amount"] for item in expenses)
+    print(f"Your balance is ₪ {balance}")
 
-
-
+    return incomes, expenses
 
 
 
