@@ -28,8 +28,7 @@ def add_expense(incomes: list, expenses: list) -> tuple:
 
 
 
-#def add_expense(incomes: list, expenses: list) -> tuple:
-    #return incomes, expenses
+def add_income(incomes: list, expenses: list) -> tuple:
 
 
 
