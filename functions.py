@@ -31,14 +31,15 @@ def add_expense(incomes: list, expenses: list) -> tuple:
 def add_income(incomes: list, expenses: list) -> tuple:
     while True:
         description = input("Enter income transaction description (or 'q' to quit): ")
-        if description.lower == 'q':
+        if description.lower() == "q":
             break
         try:
             amount = float(input("Enter income transaction amount: "))
             incomes.append({"amount": amount, "description": description})
         except ValueError:
             print("Error: Invalid amount. Please enter a valid number.")
-        return incomes, expenses
+    
+    return incomes, expenses
 
 
 
